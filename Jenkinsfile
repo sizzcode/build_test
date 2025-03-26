@@ -1,9 +1,16 @@
 pipeline {
-    agent any  // Runs on any available agent
+    agent any
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
-                echo 'Hello, Jenkins! This is a test build.'
+                script {
+                    try {
+                        bat 'python hello_world.py'  // Windows
+                        // sh 'python3 hello_world.py'  // Linux
+                    } catch (Exception e) {
+                        error("Python script failed! Build aborted.")  // Force failure
+                    }
+                }
             }
         }
     }
