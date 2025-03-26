@@ -1,7 +1,7 @@
 # hello_world.py
 
-def main():
-    print("Hi!)
+def check():
+    return "h
 
 if __name__ == "__main__":
-    main()
+    check()
