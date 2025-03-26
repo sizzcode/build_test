@@ -1,16 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
+        stage('Test Python') {
             steps {
-                script {
-                    try {
-                        bat 'python hello_world.py'  // Windows
-                        // sh 'python3 hello_world.py'  // Linux
-                    } catch (Exception e) {
-                        error("Python script failed! Build aborted.")  // Force failure
-                    }
-                }
+                // Use the full path to your Python executable (from 'where python')
+                bat 'C:\\Users\\adith\\AppData\\Local\\Programs\\Python\\Python311\\python.exe hello_world.py'
             }
         }
     }
