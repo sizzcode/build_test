@@ -1,10 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Test python') {
+        stage('Checkout'){
+            steps{
+                checkout scm
+            }
+        }
+        stage('Run python Script') {
             steps {
                 // Use the full path to your Python executable (from 'where python')
-                bat 'C:\\Users\\DELL\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe hello_world.py'
+                bat 'py hello_world.py'
             }
         }
 
