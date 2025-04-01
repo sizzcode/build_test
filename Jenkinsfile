@@ -9,7 +9,7 @@ pipeline {
         stage('Run python Script') {
             steps {
                 // Use the full path to your Python executable (from 'where python')
-                bat 'py hello_world.py'
+                bat 'python hello_world.py'
             }
         }
 
