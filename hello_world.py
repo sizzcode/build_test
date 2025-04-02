@@ -5,7 +5,6 @@ def div():
 def check():
     return "h
 
-if __name__ == "__main__":
-    
+if __name__ == "__main__": 
     div()
     check()
